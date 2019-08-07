@@ -8,8 +8,6 @@ const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.use('view engine', 'ejs');
-
 app.get('/', (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
@@ -53,3 +51,6 @@ let port = 3000 || process.env.PORT;
 app.listen(port, (req, res) => {
   console.log('server is up and running');
 });
+
+
+// 9b170abbdc55f37b3d27363013aaa882-us3
