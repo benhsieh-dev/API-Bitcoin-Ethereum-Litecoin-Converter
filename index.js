@@ -7,9 +7,13 @@ const express    = require('express'),
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public")); 
+
+app.set("view engine", "ejs"); 
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  // res.sendFile(__dirname + "/index.html");
+  res.render("index"); 
 });
 
 app.post('/', (req, res) => {
@@ -48,5 +52,3 @@ app.listen(process.env.PORT || 3000, (req, res) => {
   console.log('server is up and running');
 });
 
-
-// 9b170abbdc55f37b3d27363013aaa882-us3
